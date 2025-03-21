@@ -1,0 +1,585 @@
+[
+  {
+    "name": "ekycbycrosscore",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.ExperianCrossCoreFunction.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "get"
+        ],
+        "route": "ekycbycrosscore",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "FindMFRMAccount",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.FindMFRMAccount.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "get"
+        ],
+        "route": "mfrmaccount",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "FindMFRMAccountByNameAndBU",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.FindMFRMAccountByNameAndBU.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "get"
+        ],
+        "route": "mfrmaccountbynameandowningbu",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "FindMFRMContactDetails",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.FindMFRMContactDetails.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "get"
+        ],
+        "route": "mfrmcontactfulldetails",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "FindMFRMContacts",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.FindMFRMContacts.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "get"
+        ],
+        "route": "mfrmcontact/{accountid}",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "FindMFRMSample",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.FindMFRMSample.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "get"
+        ],
+        "route": "sample/{nameCriteria}",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "FnAttachmentActivityReader",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.FnAttachmentActivityReader.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "message",
+        "direction": "In",
+        "type": "serviceBusTrigger",
+        "queueName": "mextod365corporateattachments",
+        "connection": "AsbQueueEndPoint",
+        "cardinality": "One",
+        "properties": {
+          "supportsDeferredBinding": "True"
+        }
+      }
+    ]
+  },
+  {
+    "name": "FnCorporateClientsReader",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.FnCorporateClientsReader.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "message",
+        "direction": "In",
+        "type": "serviceBusTrigger",
+        "queueName": "mextod365corporateclients",
+        "connection": "AsbQueueEndPoint",
+        "cardinality": "One",
+        "properties": {
+          "supportsDeferredBinding": "True"
+        }
+      }
+    ]
+  },
+  {
+    "name": "FnCorporateCreditReader",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.FnCorporateCreditReader.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "message",
+        "direction": "In",
+        "type": "serviceBusTrigger",
+        "queueName": "mextod365corporatecredit",
+        "connection": "AsbQueueEndPoint",
+        "cardinality": "One",
+        "properties": {
+          "supportsDeferredBinding": "True"
+        }
+      }
+    ]
+  },
+  {
+    "name": "FnCorporateDealsReader",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.FnCorporateDealsReader.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "message",
+        "direction": "In",
+        "type": "serviceBusTrigger",
+        "queueName": "mextod365corporatedeals",
+        "connection": "AsbQueueEndPoint",
+        "cardinality": "One",
+        "properties": {
+          "supportsDeferredBinding": "True"
+        }
+      }
+    ]
+  },
+  {
+    "name": "FnCorporateEmailsReader",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.FnCorporateEmailsReader.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "message",
+        "direction": "In",
+        "type": "serviceBusTrigger",
+        "queueName": "mextod365corporateemails",
+        "connection": "AsbQueueEndPoint",
+        "cardinality": "One",
+        "properties": {
+          "supportsDeferredBinding": "True"
+        }
+      }
+    ]
+  },
+  {
+    "name": "FnCorporateRateTracker",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.FnCorporateRateTracker.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "message",
+        "direction": "In",
+        "type": "serviceBusTrigger",
+        "queueName": "mextod365corporateratetracker",
+        "connection": "AsbQueueEndPoint",
+        "cardinality": "One",
+        "properties": {
+          "supportsDeferredBinding": "True"
+        }
+      }
+    ]
+  },
+  {
+    "name": "FnD365AlertInfoToAsb",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.FnD365AlertInfoToAsb.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Function",
+        "methods": [
+          "post"
+        ],
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "FnD365ClientContactInfoToAsb",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.FnD365ClientContactInfoToAsb.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Function",
+        "methods": [
+          "post"
+        ],
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "FnD365ContactWebActivationInfoToAsb",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.FnD365ContactWebActivationInfoToAsb.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Function",
+        "methods": [
+          "post"
+        ],
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "FnD365CreateOrUpdateCreditLineInfoToAsb",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.FnD365CreateOrUpdateCreditLineInfoToAsb.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Function",
+        "methods": [
+          "post"
+        ],
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "FnD365CreateOrUpdateCreditTierInfoToAsb",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.FnD365CreateOrUpdateCreditTierInfoToAsb.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Function",
+        "methods": [
+          "post"
+        ],
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "FnD365DeleteCreditTierInOmniInfoToAsb",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.FnD365DeleteCreditTierInOmniInfoToAsb.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Function",
+        "methods": [
+          "post"
+        ],
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "FnD365DeleteRateTrackerOpportunityInfoToAsb",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.FnD365DeleteRateTrackerOpportunityInfoToAsb.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Function",
+        "methods": [
+          "post"
+        ],
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "FnD365RateTrackerOpportunityRequestToAsb",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.FnD365RateTrackerOpportunityRequestToAsb.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Function",
+        "methods": [
+          "post"
+        ],
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "HealthCheck",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.HealthCheck.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "get",
+          "post"
+        ],
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "ekycbylexisnexis",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.LexisNexisFunction.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "get"
+        ],
+        "route": "ekycbylexisnexis",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "ekycbylexisnexisus",
+    "scriptFile": "McGlobalAzureFunctions.dll",
+    "entryPoint": "McGlobalAzureFunctions.LexisNexisUSFunction.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "get"
+        ],
+        "route": "ekycbylexisnexisus",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  }
+]
