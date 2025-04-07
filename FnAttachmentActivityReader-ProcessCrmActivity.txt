@@ -1,0 +1,1 @@
+{"Subject":"Plan cancellation","BodyDetails":"Regular Payment Plan Id : 28140 has been cancelled on 03/04/2025 00:00:00. Where the reason was : TemporaryPaymentHoliday","Source":2,"ActivityType":2,"ActivityState":1,"ObjectId":"58e51cfe-7e10-f011-9989-002248862460","DueDate":"2025-04-03T17:30:22"}

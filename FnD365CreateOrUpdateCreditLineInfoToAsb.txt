@@ -1,0 +1,1 @@
+{"CreditLine":{"CrmAccountId":"5a4acaeb-f9de-ef11-8ee9-000d3a39a69a","CrmCreditDetailId":"3a3e1484-19ea-ef11-9341-000d3a48474a","DailySettlementLimit":null,"DirectDebitClearanceDays":0,"IsDirectDebit":false,"MaxDirectDebitAmount":null,"Status":1,"ToleranceLevel":null}}
